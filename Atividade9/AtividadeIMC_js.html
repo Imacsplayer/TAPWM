@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 9</title>
+</head>
+<body>
+    <script>
+        let altura;
+        let peso;
+
+        altura = parseFloat(prompt("Informe a sua altura: "));
+        peso = parseFloat(prompt("Informe o seu peso atual: "));
+
+        let imc = peso / (altura**2);
+
+        if (imc < 18.5) {
+            alert("Classificação: Magreza! \n Cuidado, você está com o peso abaixo da média!");
+        }
+        else if (imc > 18.5 && imc < 24.9) {
+            alert("Classificação: Peso Normal \n Você está com o peso dentro da média");
+        }
+        else if (imc > 25 && imc < 29.9) {
+            alert("Classificação: Sobrepeso \n Você está com o peso um pouco acima da média");
+        }
+        else if (imc > 30 && imc < 39.9) {
+            alert("Classificação: Obesidade \n Você está com o peso acima da média");
+        }
+        else {
+            alert("Classificação: Obesidade Grave \n O seu peso está perigosamente acima da média");
+        }
+        
+    </script>
+</body>
+</html>
