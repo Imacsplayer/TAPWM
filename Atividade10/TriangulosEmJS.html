@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 10</title>
+</head>
+<body>
+    <script>
+        let a;
+        let b;
+        let c;
+
+        do {
+            a = parseInt(prompt("Digite o primeiro número: "));
+        }
+        while (isNaN(a))
+    
+        do {
+            b = parseInt(prompt("Digite o segundo número: "));
+        }
+        while (isNaN(b))
+        
+        do {
+            c = parseInt(prompt("Digite o último número: "));
+        }
+        while (isNaN(c))
+
+        if (Math.abs(b - c) < a < b + c && Math.abs(a - c) < b < a + c && Math.abs(a - b) < c < a + b){
+            if ( a == b && a == c) {
+                alert("É um triângulo Equilátero");
+            }
+            else if ( a!= b && a != c && b != c) {
+                alert("É um triângulo Escaleno");
+            }
+            else {
+                alert("É um triângulo Isóceles");
+            }
+        }
+        else {
+            alert("Número(s) inválido(s)")
+        }
+    </script>
+    </body>
+</html>
