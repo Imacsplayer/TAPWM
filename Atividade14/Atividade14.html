@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // ATIVIDADE 14 - OBJETOS ----- EXERCÍCIOS
+
+        // EXERCÍCIO 1 - CRIE UMA FUNÇÃO CONSTRUTORA PARA O RETÂNGULO
+        // RECEBER (X,Y) E UM MÉTODO PARA CALCULAR A ÁREA. SEM GET E SET
+        function criarRetangulo(base, altura) {
+
+            this.base = base;
+            this.altura = altura;
+
+            this.calculandoArea = function () {
+                return base * altura;
+            };
+        }
+
+        var retangulo = new criarRetangulo(14, 2);
+        var mensagem = `Base: ${retangulo.base}\n` +
+            `Altura: ${retangulo.altura}\n` +
+            `Área do Retângulo: ${retangulo.calculandoArea()}`;
+        alert(mensagem);
+
+        // CRIE UMA FUNÇÃO TIPO CONTA, COM AS PROPIEDADES
+        // (Nome concorrista, banco, número da conta e saldo)
+        // CRIE TAMBÉM DUAS NOVAS FUNÇÇOES USANDO HERANÇA
+        // "CORRENTE" COM SALDO ESPECIAL E "POUPANÇA" COM JUROS E DATA DE VENCIMENTO
+        // RECEBENDO OS DADOS VIA GET E SET
+        // CRIAR UM OBJETO DE CADA UMA: CORRENTE E POUPANÇA
+
+        // Conta (Pai)
+        function Conta(nomeConcorrista, banco, numeroConta, saldo) {
+            this.nomeConcorrista = nomeConcorrista,
+                this.banco = banco;
+            this.numeroConta = numeroConta;
+            this.saldo = saldo;
+        }
+        // Conta Corrente (filho)
+        // Herdou da classe Conta
+        function ContaCorrente(nomeConcorrista, banco, numeroConta, saldo, saldoEspecial) {
+            Conta.call(this, nomeConcorrista, banco, numeroConta, saldo);
+            this.saldoEspecial = saldoEspecial;
+        }
+
+        // Conta Poupança (filho)
+        // Herdou da classe Conta
+        function ContaPoupanca(nomeConcorrista, banco, numeroConta, saldo, juros, dataVencimento) {
+            Conta.call(this, nomeConcorrista, banco, numeroConta, saldo);
+            this.juros = juros;
+            this.dataVencimento = dataVencimento;
+        }
+
+        var contaCorrente = new ContaCorrente("João Silva", "Banco do Brasil", "12345", 1000, 500);
+        var contaPoupanca = new ContaPoupanca("Maria Oliveira", "Caixa Econômica", "67890", 2000, 5, "2024-12-31");
+
+        var mensagemCorrente = `CONTA CORRENTE\nNome Correntista: ${contaCorrente.nomeConcorrista}\nBanco: ${contaCorrente.banco}` +
+            `\nNúmero da Conta: ${contaCorrente.numeroConta} \nSaldo: R$${contaCorrente.saldo}` +
+            `\nSaldo Especial: R$${contaCorrente.saldoEspecial}`;
+
+        var mensagemPoupanca = `CONTA POUPANÇA\nNome Correntista: ${contaPoupanca.nomeConcorrista}\nBanco: ${contaPoupanca.banco}` +
+            `\nNúmero da Conta: ${contaPoupanca.numeroConta} \nSaldo: R$${contaPoupanca.saldo}` +
+            `\nJuros: ${contaPoupanca.juros}% \nData de Vencimento: ${contaPoupanca.dataVencimento}`;
+
+        alert(mensagemCorrente);
+        alert(mensagemPoupanca);
+    </script>
+</body>
+
+</html>
