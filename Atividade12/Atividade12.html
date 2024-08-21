@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // EXERCÍCIO 1 - CRIAR FUNÇÃO JS PRA SOMAR E ELEVAR AO QUADRADO OS NÚMEROS AÍ
+      let bolsa = [];
+      let total = 0;
+
+      for (i = 0; i < 3; i++) {
+        let numero = prompt("Digite um número");
+
+        numero = Number(numero);
+
+        Array.prototype.push.apply(bolsa, [numero]);
+        total += numero;
+      }
+
+      alert(
+        "A soma dos três números é " +
+          total +
+          "\nO quadrado do primeiro número é: " +
+          Math.pow(bolsa[0], 2) +
+          "\nO quadrado do segundo é: " +
+          Math.pow(bolsa[1], 2)
+      );
+
+      // EXERCÍCIO 2 - FUNÇÃO QUE RECEBE PARÂMETRO E FALA AQUELAS COISAS LÁ
+      let palavra = prompt("Escreva uma palavra: ");
+      let procurar = prompt("Escreva outra palavra: ");
+
+      function ex2(palavra, procurar) {
+        if (
+          palavra == "" ||
+          procurar == "" ||
+          palavra == undefined ||
+          procurar == undefined
+        ) {
+          alert("Erro, palavra inválida detectada!");
+        } else {
+          if (palavra.includes(procurar)) {
+            alert(`A palavra "${palavra}" contém "${procurar}".`);
+          } else {
+            alert(`A palavra "${palavra}" não contém "${procurar}".`);
+          }
+        }
+      }
+
+      ex2(palavra, procurar);
+    </script>
+  </body>
+</html>
