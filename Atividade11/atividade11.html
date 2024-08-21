@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAPPW</title>
+</head>
+<body>
+    <script>
+        
+        var num1 = prompt("Digite um número");
+        var num2 = prompt("Digite mais um número");
+        var num3 = prompt("Digite outro número");
+        var num4 = prompt("Digite o último número");
+
+        numeros = [2, 5, 7];
+
+        // Receber 4 números como parâmetros e retornar o maior deles usando somente ifs
+        function primeira(num1, num2, num3, num4)
+        {
+            if(num1 > num2 && num1 > num3 && num1 > num4){
+                alert("O maior número é " + num1);
+            }
+            else if(num2 > num1 && num2 > num3 && num2 > num4) {
+                alert("O maior número é " + num2);
+            }
+            else if(num3 > num1 && num3 > num2 && num3 > num4) {
+                alert("O maior número é " + num3);
+            }
+            else if(num4 > num1 && num4 > num2 && num4 > num3) {
+                alert("O maior número é " + num4);
+            }
+        }
+        primeira(num1, num2, num3, num4);
+        // Recebe 4 números como parâmetros e retorna o maior usando Math.max
+        function segunda(num1, num2, num3, num4) 
+        {
+           alert("O maior número é " + Math.max(num1, num2, num3, num4));
+        }
+        segunda(num1, num2, num3, num4);
+        // Recebe 3 números e retorna em ordem crescente
+        function terceira()
+        {
+            alert("A ordem é: " + numeros.sort());
+        }
+        terceira();
+    </script>
+</body>
+</html>
