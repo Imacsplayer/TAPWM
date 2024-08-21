@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // ATIVIDADE 13 - CRIAR UM OBJETO DE 3 FORMAS DIFERENTES
+        // Aluno1(propriedades: RA, Nome).
+        // Atribua valor para as propriedades.
+
+        // Usando Contrutor
+        var Aluno1 = new Object();
+        Aluno1.ra = "0031432412021";
+        Aluno1.nome = "Luiz Filipe de Camargo";
+        Aluno1.forma = "Criado com Contrutor";
+
+        // Usando sintaxe literal
+        var Aluno2 = {
+            ra: "0031432412021",
+            nome: "Luiz Filipe de Camargo",
+            forma: "Criado com sintaxe literal"
+        };
+
+        // Usando função contrutora
+        function criaAluno(ra, nome, forma) {
+            return {
+                ra: ra,
+                nome: nome,
+                forma: forma
+            }
+        }
+
+        var aluno = criaAluno("0031432412021", "Luiz Filipe de Camargo", "Função Contrutora");
+
+        alert("Primeiro aluno.\nRA: " + Aluno1.ra + "\nNome do aluno: " + Aluno1.nome + "\n" + Aluno1.forma);
+        alert("Segundo aluno.\nRA: " + Aluno2.ra + "\nNome do aluno: " + Aluno2.nome + "\n" + Aluno2.forma);
+        alert("Terceiro aluno.\nRA: " + aluno.ra + "\nNome do aluno: " + aluno.nome + "\n" + aluno.forma);
+    </script>
+</body>
+
+</html>
