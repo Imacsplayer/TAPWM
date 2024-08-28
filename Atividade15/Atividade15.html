@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Retangulo {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+
+            calcularArea(x, y) {
+                return this.x * this.y;
+            }
+        }
+
+        objRetangulo = new Retangulo(16, 8);
+
+        alert("O Retângulo possui " + objRetangulo.calcularArea() + "cm de Área");
+
+        class Conta {
+            constructor(nome, banco, numero, saldo) {
+                this.nome = nome;
+                this.banco = banco;
+                this.numero = numero;
+                this.saldo = saldo;
+            }
+            
+            getNome(){
+                return this.nome;
+            }
+            
+            setNome(value) {
+                this.nome = value;
+            }
+
+            getBanco(){
+                return this.banco;
+            }
+            
+            setBanco(value) {
+                this.banco = value;
+            }
+            
+            getNumero(){
+                return this.numero;
+            }
+            
+            setNumero(value) {
+                this.numero = value;
+            }
+
+            getSaldo(){
+                return this.saldo;
+            }
+            
+            setSaldo(value) {
+                this.saldo = value;
+            }
+        }
+
+        class ContaCorrente extends Conta {
+            constructor(nome, banco, numero, saldo, saldo_especial) {
+                super(nome, banco, numero, saldo);
+                this.saldo_especial = saldo_especial;
+            }
+
+            getSaldo_especial() {
+                return this.saldo_especial;
+            }
+
+            setSaldo_especial(value) {
+                this.saldo_especial = value;
+            }
+        }
+
+        class ContaPoupanca extends Conta {
+            constructor(nome, banco, numero, saldo, juros, data) {
+                super(nome, banco, numero, saldo);
+                this.juros = juros;
+                this.data = data;
+            }
+
+            getJuros() {
+                return this.juros;
+            }
+
+            setJuros(value) {
+                this.juros = value;
+            }
+
+            getData() {
+                return this.data;
+            }
+
+            setData(value) {
+                this.data = value;
+            }
+        }
+
+        objContaPoupanca = new ContaPoupanca("Luiz Rodrigo Silvano Sant'Anna", "Bradesco", "74839520", "56.845,02", "7", "2024-08-28");
+        objContaCorrente = new ContaCorrente("Rogério Almeida Rocha Santos Pinto", "Santander", "12345678", "13,02", "1550,00");
+
+        alert(`CONTA CORRENTE 
+        Nome: ${objContaCorrente.getNome()}
+        Banco: ${objContaCorrente.getBanco()}
+        Número da Conta: ${objContaCorrente.getNumero()}
+        Saldo da conta: R$${objContaCorrente.getSaldo()}
+        Saldo Especial: R$${objContaCorrente.getSaldo_especial()}`);
+
+        alert(`CONTA POUPANÇA
+        Nome: ${objContaPoupanca.getNome()}
+        Banco: ${objContaPoupanca.getBanco()}
+        Número da conta: ${objContaPoupanca.getNumero()}
+        Saldo da conta: R$${objContaPoupanca.getSaldo()}
+        Juros: ${objContaPoupanca.getJuros()}%
+        Data de Vencimento: ${objContaPoupanca.getData()}`);
+    </script>
+</body>
+
+</html>
