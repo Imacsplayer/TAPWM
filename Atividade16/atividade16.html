@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="color: #FF0000;" >Abra a Janela
+        <img src="janela-fechada.jpg" width="200px" height="200px" 
+        onmouseup="soltar(this)" onmouseout="janelaClose(this)" onmousemove="janelaOpen(this)" onmousedown="janelaBroken(this)"/> 
+    </div>
+    <script>
+        function soltar(obj) {
+            obj.src = "janela-aberta.png";
+        }
+        function janelaClose(obj) {
+            obj.src = "janela-fechada.jpg";
+        }
+        function janelaOpen(obj) { 
+            obj.src = "janela-aberta.png";
+        }
+        function janelaBroken(obj) {
+            obj.src = "janela-quebrada.png"
+        }
+    </script>
+</body>
+
+</html>
