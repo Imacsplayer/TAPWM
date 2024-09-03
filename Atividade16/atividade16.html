@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-    <div id="janelaTexto" style="color: #FF0000;">Abra a Janela</div>
-    <img src="janela-fechada.jpg" width="200px" height="200px" 
-    onmouseup="soltar(this)" onmouseout="janelaClose(this)" onmousemove="janelaOpen(this)" onmousedown="janelaBroken(this)"/> 
+  <body>
+    <div>
+        <h1 id="janelaTexto">Abra a Janela</h1>
+      <img
+        src="janela-fechada.jpg"
+        width="200px"
+        height="200px"
+        onmouseup="soltar(this)"
+        onmouseout="janelaClose(this)"
+        onmouseover="janelaOpen(this)"
+        onmousedown="janelaBroken(this)"
+      />
+    </div>
     <script>
-        function soltar(obj) {
-            obj.src = "janela-aberta.png";
-            document.getElementById("janelaTexto").innerText = "Janela Aberta";
-        }
-        function janelaClose(obj) {
-            obj.src = "janela-fechada.jpg";
-            document.getElementById("janelaTexto").innerText = "Janela Fechada";
-        }
-        function janelaOpen(obj) {
-            obj.src = "janela-aberta.png";
-            document.getElementById("janelaTexto").innerText = "Janela Aberta";
-        }
-        function janelaBroken(obj) {
-            obj.src = "janela-quebrada.png";
-            document.getElementById("janelaTexto").innerText = "Janela Quebrada";
-        }
+      function soltar(obj) {
+          obj.src = "janela-aberta.png";
+          document.getElementById("janelaTexto").innerText = "Janela Aberta";
+      }
+      function janelaClose(obj) {
+          obj.src = "janela-fechada.jpg";
+          document.getElementById("janelaTexto").innerText = "Janela Fechada";
+      }
+      function janelaOpen(obj) {
+          obj.src = "janela-aberta.png";
+          document.getElementById("janelaTexto").innerText = "Janela Aberta";
+      }
+      function janelaBroken(obj) {
+          obj.src = "janela-quebrada.png";
+          document.getElementById("janelaTexto").innerText = "Janela Quebrada";
+      }
     </script>
-</body>
-
+  </body>
 </html>
